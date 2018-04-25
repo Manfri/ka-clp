@@ -1,0 +1,133 @@
+﻿@model IEnumerable<AMEL2.Models.Bericht>
+
+@{
+    ViewBag.Title = "Messstellendaten EMSR";
+}
+
+<h2>Messstellendaten EMSR</h2>
+<!--
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+-->
+@using (Html.BeginForm())
+{
+    <p>
+        Stichwortsuche nach AKZ: @Html.TextBox("SearchString")
+        <input type="submit" value="Suchen" />
+        <input type="button" value="Alle anzeigen" onclick="location.href='@Url.Action("old_mdemsr", "Berichts",new {sortOrder = String.Empty, searchString = "All"},null)';return false;" />
+    </p>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("AKZ", "old_mdemsr", new { sortOrder = ViewBag.s1SortParm })
+        </th>
+        <th>
+            Bezeichnung
+        </th>
+        <th>
+            Örtlichkeit
+        </th>
+        <th>
+            Kst
+        </th>
+        <th>
+            Flt-PLT
+        </th>
+        <th>
+            Mesprinzip
+        </th>
+        <th>
+            Ex
+        </th>
+        <th>
+            ExZ
+        </th>
+        <th>
+            VersorgungsSp.
+        </th>
+        <th>
+            SigAus1
+        </th>
+        <th>
+            SigAus2
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            @if (item.IT == 0)
+            {
+                <td class="table-cell-aliceblue" colspan="2">
+                    @Html.DisplayFor(modelItem => item.s1)
+                </td>
+                <td class="table-cell-aliceblue"></td>
+                <td class="table-cell-aliceblue"></td>
+                <td class="table-cell-aliceblue"></td>
+                <td class="table-cell-aliceblue"></td>
+                <td class="table-cell-aliceblue"></td>
+                <td class="table-cell-aliceblue"></td>
+                <td class="table-cell-aliceblue"></td>
+                <td class="table-cell-aliceblue"></td>
+                <td class="table-cell-aliceblue"></td>
+                <td class="table-cell-aliceblue"></td>
+                <td class="table-cell-aliceblue"></td>
+                <td class="table-cell-aliceblue"></td>
+            }
+            @if (item.IT != 0)
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.s1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.s2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.s3)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.s4)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.s5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.s6)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.s7)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.s8)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.s9)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.s10)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.s11)
+                </td>
+            }
+
+
+            <td>
+                @if (item.IT != 0)
+                {
+                    @Html.ActionLink("Bearbeiten", "old_mdemsr_edit", new { id = item.BerichtID })
+                }
+
+                <!--
+                @Html.ActionLink("Details", "Details", new { id=item.BerichtID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.BerichtID })
+                 -->
+            </td>
+
+        </tr>
+    }
+
+</table>

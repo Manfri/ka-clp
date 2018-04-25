@@ -1,0 +1,148 @@
+﻿@model IEnumerable<AMEL2.Models.Bericht>
+
+@{
+    ViewBag.Title = "Antriebe Anzeige-Bedienung";
+}
+
+<h2>Antriebe Anzeige-Bedienung</h2>
+<!--
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+-->
+@using (Html.BeginForm())
+{
+    <p>
+        Stichwortsuche: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+        <input type="button" value="Alle anzeigen" onclick="location.href='@Url.Action("aab", "Berichts",new {sortOrder = String.Empty, searchString = "All"},null)';return false;" />
+    </p>
+}
+
+<table class="table">
+    <tr>        
+        <th>
+            @Html.ActionLink("AKZ", "aab", new { sortOrder = ViewBag.s1SortParm })
+        </th>
+        <th>
+            Bezeichnung
+        </th>
+        <th>
+            Örtlichkeit
+        </th>
+        <th>
+            Bedienung Vor-Ort
+        </th>
+        <th>
+            Bedienung Schaltanlage
+        </th>
+        <th>
+            Bedienung Panel
+        </th>
+        <th>
+            Bedienung PLS
+        </th>
+        <th>
+            Anzeige Vor-Ort
+        </th>
+        <th>
+            Anzeige Schaltanlage
+        </th>
+        <th>
+            Anzeige Panel      
+        </th>
+        <th>
+            Anzeige PLS
+        </th>
+        <th>
+            Antriebsart
+        </th>
+        <th>
+            Energiedatenerfassung
+        </th>
+       
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>        
+        @if (item.IT == 0)
+        {
+        <td class="table-cell-aliceblue" colspan="2">
+            @Html.DisplayFor(modelItem => item.s1)
+        </td>
+        <td class="table-cell-aliceblue">           
+        </td>
+        <td class="table-cell-aliceblue">            
+        </td>
+        <td class="table-cell-aliceblue">            
+        </td>
+        <td class="table-cell-aliceblue"></td>
+        <td class="table-cell-aliceblue"></td>
+        <td class="table-cell-aliceblue"></td>
+        <td class="table-cell-aliceblue"></td>
+        <td class="table-cell-aliceblue"></td>
+        <td class="table-cell-aliceblue"></td>
+        <td class="table-cell-aliceblue"></td>
+        <td class="table-cell-aliceblue"></td>
+        <td class="table-cell-aliceblue"></td>
+        }
+        @if (item.IT != 0)
+        {
+            <td >
+                @Html.DisplayFor(modelItem => item.s1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.s2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.s3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.s4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.s5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.s6)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.s7)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.s8)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.s9)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.s10)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.s11)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.s12)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.s13)
+            </td>
+        }
+        
+       
+        <td>
+            @if (item.IT != 0)
+            {
+                @Html.ActionLink("Bearbeiten", "aabEdit", new { id = item.BerichtID })
+            }
+           
+             <!--
+            @Html.ActionLink("Details", "Details", new { id=item.BerichtID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BerichtID })
+             -->
+        </td>
+       
+    </tr>
+}
+
+</table>

@@ -1,0 +1,76 @@
+﻿@model IEnumerable<AMEL2.Models.Bericht>
+
+@{
+    ViewBag.Title = "Kabellmengenermittlung";
+}
+
+<h2>Kabellmengenermittlung</h2>
+<!--
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+-->
+<table class="table">
+    <tr>
+        <!--
+        <th>
+            @Html.DisplayNameFor(model => model.Projekt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IT)
+        </th>
+            -->
+        <th>
+            Kabeltyp / AKZ 
+        </th>
+        <th>
+            Kabellänge Summe (m) / Bezeichnung
+        </th>
+        <th>
+            Örtlichkeit
+        </th>
+        <th>
+            Kabellänge (m)
+        </th>
+       
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <!--
+        <td>
+            @Html.DisplayFor(modelItem => item.Projekt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IT)
+        </td>
+            -->
+        <td>
+            @Html.DisplayFor(modelItem => item.s1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.s2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.s3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.s4)
+        </td>
+        <!--
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BerichtID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BerichtID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BerichtID })
+        </td>
+        -->
+    </tr>
+}
+
+</table>

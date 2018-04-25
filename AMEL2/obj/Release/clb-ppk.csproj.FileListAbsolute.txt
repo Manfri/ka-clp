@@ -1,0 +1,220 @@
+D:\MVC\clb-ppk\AMEL2\bin\ApplicationInsights.config
+D:\MVC\clb-ppk\AMEL2\bin\roslyn\csc.exe
+D:\MVC\clb-ppk\AMEL2\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\MVC\clb-ppk\AMEL2\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\MVC\clb-ppk\AMEL2\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\MVC\clb-ppk\AMEL2\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\MVC\clb-ppk\AMEL2\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\MVC\clb-ppk\AMEL2\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\MVC\clb-ppk\AMEL2\bin\roslyn\System.Collections.Immutable.dll
+D:\MVC\clb-ppk\AMEL2\bin\roslyn\System.Reflection.Metadata.dll
+D:\MVC\clb-ppk\AMEL2\bin\roslyn\vbc.exe
+D:\MVC\clb-ppk\AMEL2\bin\roslyn\VBCSCompiler.exe
+D:\MVC\clb-ppk\AMEL2\bin\roslyn\VBCSCompiler.exe.config
+D:\MVC\clb-ppk\AMEL2\bin\AMEL2.dll.config
+D:\MVC\clb-ppk\AMEL2\bin\AMEL2.dll
+D:\MVC\clb-ppk\AMEL2\bin\AMEL2.pdb
+D:\MVC\clb-ppk\AMEL2\bin\Antlr3.Runtime.dll
+D:\MVC\clb-ppk\AMEL2\bin\EntityFramework.dll
+D:\MVC\clb-ppk\AMEL2\bin\EntityFramework.SqlServer.dll
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.AI.Agent.Intercept.dll
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.AI.DependencyCollector.dll
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.AI.Web.dll
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.AI.WindowsServer.dll
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.ApplicationInsights.dll
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.AspNet.Identity.Core.dll
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.Azure.KeyVault.Core.dll
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.Owin.dll
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.Owin.Security.Cookies.dll
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.Owin.Security.dll
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.Owin.Security.Facebook.dll
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.Owin.Security.Google.dll
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.Owin.Security.OAuth.dll
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.Owin.Security.Twitter.dll
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.Web.Infrastructure.dll
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.WindowsAzure.Storage.dll
+D:\MVC\clb-ppk\AMEL2\bin\Newtonsoft.Json.dll
+D:\MVC\clb-ppk\AMEL2\bin\Owin.dll
+D:\MVC\clb-ppk\AMEL2\bin\System.Web.Helpers.dll
+D:\MVC\clb-ppk\AMEL2\bin\System.Web.Mvc.dll
+D:\MVC\clb-ppk\AMEL2\bin\System.Web.Optimization.dll
+D:\MVC\clb-ppk\AMEL2\bin\System.Web.Razor.dll
+D:\MVC\clb-ppk\AMEL2\bin\System.Web.WebPages.Deployment.dll
+D:\MVC\clb-ppk\AMEL2\bin\System.Web.WebPages.dll
+D:\MVC\clb-ppk\AMEL2\bin\System.Web.WebPages.Razor.dll
+D:\MVC\clb-ppk\AMEL2\bin\WebGrease.dll
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.AI.DependencyCollector.xml
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.AI.Web.xml
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.AI.WindowsServer.xml
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.ApplicationInsights.xml
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.Azure.KeyVault.Core.xml
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.WindowsAzure.Storage.pdb
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.WindowsAzure.Storage.xml
+D:\MVC\clb-ppk\AMEL2\bin\Newtonsoft.Json.xml
+D:\MVC\clb-ppk\AMEL2\bin\System.Web.Helpers.xml
+D:\MVC\clb-ppk\AMEL2\bin\System.Web.Mvc.xml
+D:\MVC\clb-ppk\AMEL2\bin\System.Web.Optimization.xml
+D:\MVC\clb-ppk\AMEL2\bin\System.Web.Razor.xml
+D:\MVC\clb-ppk\AMEL2\bin\System.Web.WebPages.xml
+D:\MVC\clb-ppk\AMEL2\bin\System.Web.WebPages.Deployment.xml
+D:\MVC\clb-ppk\AMEL2\bin\System.Web.WebPages.Razor.xml
+D:\MVC\clb-ppk\AMEL2\bin\Antlr3.Runtime.pdb
+D:\MVC\clb-ppk\AMEL2\bin\EntityFramework.xml
+D:\MVC\clb-ppk\AMEL2\bin\EntityFramework.SqlServer.xml
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.AspNet.Identity.Core.xml
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.Owin.xml
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.Owin.Security.xml
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.Owin.Security.Facebook.xml
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.Owin.Security.Cookies.xml
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.Owin.Security.OAuth.xml
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.Owin.Security.Google.xml
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.Owin.Security.Twitter.xml
+D:\MVC\clb-ppk\AMEL2\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\MVC\clb-ppk\AMEL2\bin\de\System.Web.Helpers.resources.dll
+D:\MVC\clb-ppk\AMEL2\bin\de\System.Web.Mvc.resources.dll
+D:\MVC\clb-ppk\AMEL2\bin\de\System.Web.Optimization.resources.dll
+D:\MVC\clb-ppk\AMEL2\bin\de\System.Web.Razor.resources.dll
+D:\MVC\clb-ppk\AMEL2\bin\de\System.Web.WebPages.resources.dll
+D:\MVC\clb-ppk\AMEL2\bin\de\System.Web.WebPages.Deployment.resources.dll
+D:\MVC\clb-ppk\AMEL2\bin\de\System.Web.WebPages.Razor.resources.dll
+D:\MVC\clb-ppk\AMEL2\bin\de\EntityFramework.resources.dll
+D:\MVC\clb-ppk\AMEL2\bin\de\EntityFramework.SqlServer.resources.dll
+D:\MVC\clb-ppk\AMEL2\bin\de\Microsoft.AspNet.Identity.Core.resources.dll
+D:\MVC\clb-ppk\AMEL2\bin\de\Microsoft.AspNet.Identity.Owin.resources.dll
+D:\MVC\clb-ppk\AMEL2\bin\de\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+D:\MVC\clb-ppk\AMEL2\bin\de\Microsoft.Owin.resources.dll
+D:\MVC\clb-ppk\AMEL2\bin\de\Microsoft.Owin.Host.SystemWeb.resources.dll
+D:\MVC\clb-ppk\AMEL2\bin\de\Microsoft.Owin.Security.resources.dll
+D:\MVC\clb-ppk\AMEL2\bin\de\Microsoft.Owin.Security.Facebook.resources.dll
+D:\MVC\clb-ppk\AMEL2\bin\de\Microsoft.Owin.Security.Google.resources.dll
+D:\MVC\clb-ppk\AMEL2\bin\de\Microsoft.Owin.Security.Twitter.resources.dll
+D:\MVC\clb-ppk\AMEL2\bin\de\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+D:\MVC\clb-ppk\AMEL2\obj\Release\clb-ppk.csprojResolveAssemblyReference.cache
+D:\MVC\clb-ppk\AMEL2\obj\Release\AMEL2.Migrations.Initial.resources
+D:\MVC\clb-ppk\AMEL2\obj\Release\clb-ppk.csproj.GenerateResource.Cache
+D:\MVC\clb-ppk\AMEL2\obj\Release\clb-ppk.csproj.CoreCompileInputs.cache
+D:\MVC\clb-ppk\AMEL2\obj\Release\AMEL2.dll
+D:\MVC\clb-ppk\AMEL2\obj\Release\AMEL2.pdb
+D:\MVC\clb-ppk\AMEL2\obj\Release\clb-ppk.csproj.CopyComplete
+C:\AMEL WEB\clb-ppk\AMEL2\bin\ApplicationInsights.config
+C:\AMEL WEB\clb-ppk\AMEL2\bin\roslyn\csc.exe
+C:\AMEL WEB\clb-ppk\AMEL2\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\AMEL WEB\clb-ppk\AMEL2\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\AMEL WEB\clb-ppk\AMEL2\bin\roslyn\System.Collections.Immutable.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\roslyn\System.Reflection.Metadata.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\roslyn\vbc.exe
+C:\AMEL WEB\clb-ppk\AMEL2\bin\roslyn\VBCSCompiler.exe
+C:\AMEL WEB\clb-ppk\AMEL2\bin\roslyn\VBCSCompiler.exe.config
+C:\AMEL WEB\clb-ppk\AMEL2\bin\AMEL2.dll.config
+C:\AMEL WEB\clb-ppk\AMEL2\bin\AMEL2.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\AMEL2.pdb
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Antlr3.Runtime.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\EntityFramework.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\EntityFramework.SqlServer.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.AI.Agent.Intercept.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.AI.DependencyCollector.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.AI.Web.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.AI.WindowsServer.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.ApplicationInsights.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.AspNet.Identity.Core.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.Azure.KeyVault.Core.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.Owin.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.Owin.Security.Cookies.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.Owin.Security.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.Owin.Security.Facebook.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.Owin.Security.Google.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.Owin.Security.OAuth.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.Owin.Security.Twitter.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.Web.Infrastructure.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.WindowsAzure.Storage.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Newtonsoft.Json.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Owin.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\System.Web.Helpers.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\System.Web.Mvc.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\System.Web.Optimization.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\System.Web.Razor.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\System.Web.WebPages.Deployment.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\System.Web.WebPages.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\System.Web.WebPages.Razor.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\WebGrease.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.AI.DependencyCollector.xml
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.AI.Web.xml
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.AI.WindowsServer.xml
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.ApplicationInsights.xml
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.Azure.KeyVault.Core.xml
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.WindowsAzure.Storage.pdb
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.WindowsAzure.Storage.xml
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Newtonsoft.Json.xml
+C:\AMEL WEB\clb-ppk\AMEL2\bin\System.Web.Helpers.xml
+C:\AMEL WEB\clb-ppk\AMEL2\bin\System.Web.Mvc.xml
+C:\AMEL WEB\clb-ppk\AMEL2\bin\System.Web.Optimization.xml
+C:\AMEL WEB\clb-ppk\AMEL2\bin\System.Web.Razor.xml
+C:\AMEL WEB\clb-ppk\AMEL2\bin\System.Web.WebPages.xml
+C:\AMEL WEB\clb-ppk\AMEL2\bin\System.Web.WebPages.Deployment.xml
+C:\AMEL WEB\clb-ppk\AMEL2\bin\System.Web.WebPages.Razor.xml
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Antlr3.Runtime.pdb
+C:\AMEL WEB\clb-ppk\AMEL2\bin\EntityFramework.xml
+C:\AMEL WEB\clb-ppk\AMEL2\bin\EntityFramework.SqlServer.xml
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.AspNet.Identity.Core.xml
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.Owin.xml
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.Owin.Security.xml
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.Owin.Security.Facebook.xml
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.Owin.Security.Cookies.xml
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.Owin.Security.OAuth.xml
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.Owin.Security.Google.xml
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.Owin.Security.Twitter.xml
+C:\AMEL WEB\clb-ppk\AMEL2\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\AMEL WEB\clb-ppk\AMEL2\bin\de\System.Web.Helpers.resources.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\de\System.Web.Mvc.resources.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\de\System.Web.Optimization.resources.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\de\System.Web.Razor.resources.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\de\System.Web.WebPages.resources.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\de\System.Web.WebPages.Deployment.resources.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\de\System.Web.WebPages.Razor.resources.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\de\EntityFramework.resources.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\de\EntityFramework.SqlServer.resources.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\de\Microsoft.AspNet.Identity.Core.resources.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\de\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\de\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\de\Microsoft.Owin.resources.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\de\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\de\Microsoft.Owin.Security.resources.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\de\Microsoft.Owin.Security.Facebook.resources.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\de\Microsoft.Owin.Security.Google.resources.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\de\Microsoft.Owin.Security.Twitter.resources.dll
+C:\AMEL WEB\clb-ppk\AMEL2\bin\de\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\AMEL WEB\clb-ppk\AMEL2\obj\Release\clb-ppk.csprojResolveAssemblyReference.cache
+C:\AMEL WEB\clb-ppk\AMEL2\obj\Release\AMEL2.Migrations.Initial.resources
+C:\AMEL WEB\clb-ppk\AMEL2\obj\Release\clb-ppk.csproj.GenerateResource.cache
+C:\AMEL WEB\clb-ppk\AMEL2\obj\Release\clb-ppk.csproj.CoreCompileInputs.cache
+C:\AMEL WEB\clb-ppk\AMEL2\obj\Release\clb-ppk.csproj.CopyComplete
+C:\AMEL WEB\clb-ppk\AMEL2\obj\Release\AMEL2.dll
+C:\AMEL WEB\clb-ppk\AMEL2\obj\Release\AMEL2.pdb

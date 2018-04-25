@@ -1,0 +1,81 @@
+﻿@model IEnumerable<AMEL2.Models.Bericht>
+
+@{
+    ViewBag.Title = "Antriebe Gerätedaten";
+}
+
+<h2>Antriebe Gerätedaten</h2>
+<!--
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+-->
+<table class="table">
+    <tr>        
+        <th>
+            AKZ 
+        </th>
+        <th>
+            Örtlichkeit
+        </th>
+        <th>
+            Hersteller
+        </th>
+        <th>
+            Fabrikat 
+        </th>
+        <th>
+            Typ
+        </th>
+        
+        
+       
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>        
+        @if (item.IT == 0)
+        {
+        <td class="table-cell-aliceblue">
+            @Html.DisplayFor(modelItem => item.s1)
+        </td>
+        <td class="table-cell-aliceblue">           
+        </td>
+        <td class="table-cell-aliceblue">            
+        </td>
+        <td class="table-cell-aliceblue">            
+        </td>
+        <td class="table-cell-aliceblue"></td>
+        
+        
+        }
+        @if (item.IT != 0)
+        {
+            <td >
+                @Html.DisplayFor(modelItem => item.s1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.s2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.s3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.s4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.s5)
+            </td>
+                   
+        }
+        <!--
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BerichtID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BerichtID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BerichtID })
+        </td>
+        -->
+    </tr>
+}
+
+</table>

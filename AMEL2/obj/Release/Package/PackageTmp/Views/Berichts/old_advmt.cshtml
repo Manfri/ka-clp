@@ -1,0 +1,200 @@
+﻿@model IEnumerable<AMEL2.Models.Bericht>
+
+@{
+    ViewBag.Title = "Aggregatemaschinendaten";
+}
+@{int counter = 0;}
+<h2>Aggregatemaschinendaten</h2>
+<!--
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+-->
+@using (Html.BeginForm())
+{
+    <p>
+        Stichwortsuche: @Html.TextBox("SearchString")
+        <input type="submit" value="Suchen" />
+        <input type="button" value="Alle anzeigen" onclick="location.href='@Url.Action("old_advmt", "Berichts",new {sortOrder = String.Empty, searchString = "All"},null)';return false;" />
+    </p>
+}
+
+<table class="display" border="1">
+<thead>
+    <tr class="dark-grey">
+        <th class="Section">
+            Anlage
+        </th>
+        <th class="TaskDescription">
+            Bereich
+        </th>
+        <th class="Section">
+            Aggregat
+        </th>
+        <th class="Section">
+            @Html.ActionLink("AKZ", "old_advmt", new { sortOrder = ViewBag.s1SortParm })
+        </th>
+        <th class="Name">
+            ID
+        </th>
+        <th class="Section">
+            Bezeichnung
+        </th>
+
+
+        <th class="Name">
+            Hersteller
+        </th>
+        <th class="Name">
+            Fabrikat
+        </th>
+        <th class="Name">
+            Typ
+        </th>
+        <th class="Name">
+            N-Spg.
+        </th>
+        <th class="Name">
+            N-Lst.
+        </th>
+        <th class="Name">
+            N-Strom
+        </th>
+        <th class="Name">
+            N-Drehz.
+        </th>
+        <th class="Name">
+            cos phi
+        </th>
+
+        <th class="Name">
+            Kalt-leiter
+        </th>
+        <th class="Name">
+            Dichtig-keit
+        </th>
+        <th class="Name">
+            Temp.
+        </th>
+        <th class="Name">
+            Über-druck
+        </th>
+        <th class="Name">
+            Trocken-lauf
+        </th>
+        <th class="Name">
+            
+        </th>
+
+    </tr>
+</thead>
+@foreach (var item in Model)
+{
+    ++counter;
+<tr class="@(counter%2 == 1 ? "light-grey" : "smoke-white")">
+    @if (item.IT == 0)
+    {
+        <td class="table-cell-aliceblue" colspan="2">
+            @Html.DisplayFor(modelItem => item.s1)
+        </td>
+        <td class="table-cell-aliceblue"></td>
+        <td class="table-cell-aliceblue"></td>
+        <td class="table-cell-aliceblue"></td>
+        <td class="table-cell-aliceblue"></td>
+        <td class="table-cell-aliceblue"></td>
+        <td class="table-cell-aliceblue"></td>
+        <td class="table-cell-aliceblue"></td>
+        <td class="table-cell-aliceblue"></td>
+        <td class="table-cell-aliceblue"></td>
+        <td class="table-cell-aliceblue"></td>
+        <td class="table-cell-aliceblue"></td>
+        <td class="table-cell-aliceblue"></td>
+        <td class="table-cell-aliceblue"></td>
+        <td class="table-cell-aliceblue"></td>
+        <td class="table-cell-aliceblue"></td>
+        <td class="table-cell-aliceblue"></td>
+        <td class="table-cell-aliceblue"></td>
+        <td class="table-cell-aliceblue"></td>
+    }
+    @if (item.IT != 0)
+    {
+        <td class="Section-td">
+            @Html.DisplayFor(modelItem => item.s1)
+        </td>
+        <td class="Section-td">
+            @Html.DisplayFor(modelItem => item.s2)
+        </td>
+        <td class="Section-td">
+            @Html.DisplayFor(modelItem => item.s3)
+        </td>
+        <td class="Section-td">
+            @Html.DisplayFor(modelItem => item.s4)
+        </td>
+        <td class="Section-td">
+            @Html.DisplayFor(modelItem => item.s5)
+        </td>
+        <td class="Section-td">
+            @Html.DisplayFor(modelItem => item.s6)
+        </td>
+
+        <td  class="Section-td">
+            @Html.DisplayFor(modelItem => item.s13)
+        </td>
+        <td  class="Section-td">
+            @Html.DisplayFor(modelItem => item.s14)
+        </td>
+        <td  class="Section-td">
+            @Html.DisplayFor(modelItem => item.s15)
+        </td>
+        <td  class="Section-td">
+            @Html.DisplayFor(modelItem => item.s16)
+        </td>
+        <td  class="Section-td">
+            @Html.DisplayFor(modelItem => item.s17)
+        </td>
+        <td  class="Section-td">
+            @Html.DisplayFor(modelItem => item.s18)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.s19)
+        </td>
+        <td class="Section-td">
+            @Html.DisplayFor(modelItem => item.s20)
+        </td>
+       
+        <td align="center">
+            @Html.DisplayFor(modelItem => item.s21)
+        </td>
+        <td align="center">
+            @Html.DisplayFor(modelItem => item.s22)
+        </td>
+        <td align="center">
+            @Html.DisplayFor(modelItem => item.s23)
+        </td>
+        <td align="center">
+            @Html.DisplayFor(modelItem => item.s24)
+        </td>
+        <td align="center">
+            @Html.DisplayFor(modelItem => item.s25)
+        </td>
+          
+    }
+
+
+    <td>
+        @if (item.IT != 0)
+        {
+            @Html.ActionLink("Bearbeiten", "old_advmt_edit", new { id = item.BerichtID })
+        }
+
+        <!--
+        @Html.ActionLink("Details", "Details", new { id=item.BerichtID }) |
+        @Html.ActionLink("Delete", "Delete", new { id=item.BerichtID })
+         -->
+    </td>
+
+</tr>
+
+}
+
+    </table>

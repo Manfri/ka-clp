@@ -1,0 +1,63 @@
+﻿@model IEnumerable<AMEL2.Models.Bericht>
+
+@{
+    ViewBag.Title = "Anlagendokumentation";
+}
+
+<h2>Anlagendokumentation</h2>
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            Bezeichnung
+        </th>
+        <th>
+        </th>
+    </tr>
+    <tr>
+        <td>
+            PPK Lageplan
+        </td>
+        <td>
+            <a href="https://amelblob.blob.core.windows.net/documentscontainer/amelblob/PPK Lageplan.pdf" target="_blank"><img src="@Url.Content("~/Content/images/PDF_icon_32.png")" alt="Link" /></a>
+        </td>
+
+    </tr>
+    <tr>
+        <td>
+            PPK Übersicht Energieversorgung
+        </td>
+        <td>
+            <a href="https://amelblob.blob.core.windows.net/documentscontainer/amelblob/PPK Übersicht Energieversorgung.pdf" target="_blank"><img src="@Url.Content("~/Content/images/PDF_icon_32.png")" alt="Link" /></a>
+        </td>
+
+    </tr>
+    <tr>
+        <td>
+            PPK Anlagenschemata R&I
+        </td>
+        <td>
+            <a href="https://amelblob.blob.core.windows.net/documentscontainer/amelblob/PPK R&I Biogas.pdf" target="_blank"><img src="@Url.Content("~/Content/images/PDF_icon_32.png")" alt="Link" /></a>
+        </td>
+
+    </tr>
+    <tr>
+        <td>
+            PPK Stromlaufplan NSUV BioGas Anlage
+        </td>
+        <td>
+            <a href="https://amelblob.blob.core.windows.net/documentscontainer/amelblob/PPK SP NSUV Biogas.pdf" target="_blank"><img src="@Url.Content("~/Content/images/PDF_icon_32.png")" alt="Link" /></a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            PPK Bedienungsanleitung Gasfackel
+        </td>
+        <td>
+            <a href="https://amelblob.blob.core.windows.net/documentscontainer/amelblob/PPK Bedienungsanleitung Gasfackel.pdf" target="_blank"><img src="@Url.Content("~/Content/images/PDF_icon_32.png")" alt="Link" /></a>
+        </td>
+
+    </tr>
+</table>

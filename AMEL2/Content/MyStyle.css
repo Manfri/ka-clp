@@ -1,0 +1,133 @@
+﻿
+.navbar-collapse {
+    width: auto;
+    border-top: 0;
+    box-shadow: none;
+    max-height: 500px;
+}
+
+    .navbar-collapse.collapse {
+        display: block;
+        height: 500px;
+        padding-bottom: 0;
+        overflow: visible;
+    }
+
+    .navbar-collapse.in {
+        overflow-y: visible;
+    }
+
+    .navbar-collapse .navbar-nav.navbar-left:first-child {
+        margin-left: -15px;
+    }
+
+    .navbar-collapse .navbar-nav.navbar-right:last-child {
+        margin-right: -15px;
+    }
+
+    .navbar-collapse .navbar-text:last-child {
+        margin-right: 0;
+    }
+
+.lead {
+    margin-bottom: 20px;
+    font-size: 12px;
+    font-weight: 200;
+    line-height: 1.4;
+}
+
+header,
+footer,
+nav,
+section {
+    display: block;
+}
+
+.header-col-auto {
+    width: auto;
+}
+
+.header-col-pro12 {
+    width: 12%;
+}
+
+.Name {
+    width: 5%;
+   
+}
+.Name-small {
+    width: 3%;
+   
+}
+.Name-center {
+    width: 5%;
+    text-align: center;
+}
+
+.Section {
+    width: 10%;
+    text-align:center;
+}
+.Section-td {
+    white-space: nowrap;
+    margin: 10px;
+    padding: 10px;
+}
+
+.TaskNature {
+    width: 10%;
+}
+
+.Type {
+    width: 5%;
+}
+
+.light-grey {
+    background-color: lightgray;
+}
+.dark-grey {
+    background-color:darkgray;
+}
+.center-grey {
+    background-color: gray;
+    text-align: center;
+}
+.smoke-white {
+    background-color: whitesmoke;
+}
+
+.TaskDescription {
+    width: 15%;
+    text-align: center;
+}
+.TaskDescription2 {
+    width: 300px;
+}
+.ProgressUpdate {
+    width: 25%;
+}
+
+.StartDate {
+    width: 5%;
+}
+
+.td-center {
+    text-align: center;
+}
+.form-control-dropdown-small {
+    display: block;
+    width: 100px;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #555555;
+    vertical-align: middle;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}

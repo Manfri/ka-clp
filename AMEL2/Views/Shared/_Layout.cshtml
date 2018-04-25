@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Pandatasoft - </title>
+   
+    @Styles.Render("~/Content/css")    
+    @Scripts.Render("~/bundles/modernizr")
+    
+    <script type = 'text/javascript' >
+        var appInsights=window.appInsights||function(config)
+        {
+            function r(config){ t[config] = function(){ var i = arguments; t.queue.push(function(){ t[config].apply(t, i)})} }
+            var t = { config:config},u=document,e=window,o='script',s=u.createElement(o),i,f;for(s.src=config.url||'//az416426.vo.msecnd.net/scripts/a/ai.0.js',u.getElementsByTagName(o)[0].parentNode.appendChild(s),t.cookie=u.cookie,t.queue=[],i=['Event','Exception','Metric','PageView','Trace','Ajax'];i.length;)r('track'+i.pop());return r('setAuthenticatedUserContext'),r('clearAuthenticatedUserContext'),config.disableExceptionTracking||(i='onerror',r('_'+i),f=e[i],e[i]=function(config, r, u, e, o) { var s = f && f(config, r, u, e, o); return s !== !0 && t['_' + i](config, r, u, e, o),s}),t
+        }({
+            instrumentationKey:'ebd5eae7-882b-4ca7-a828-8169fcb95073'
+        });
+        
+        window.appInsights=appInsights;
+        appInsights.trackPageView();
+    </script>    
+</head>
+<body>
+    <!--
+           <div class="top navbar navbar-default navbar-collapse">
+               <div class="container">
+                                      <div class="navbar-header">
+                                          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                                      , new { searchString = "10".ToString() }, null
+
+       </button>
+       </div>
+    -->
+    @*<div class="top navbar navbar-default navbar-collapse">
+            <div class="container">
+                <div class="navbar-header">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Abmelden", "Logoff", "Home")</li>
+                        <li>@Html.ActionLink("Startseite", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Aggregatestammdaten", "old_ademsr", "Berichts")</li>
+                        <li>@Html.ActionLink("Aggregatemaschinendaten", "old_advmt", "Berichts")</li>
+                        <li>@Html.ActionLink("Zusätzliche Maschinendaten", "old_ab", "Berichts")</li>
+                        <li>@Html.ActionLink("Anlagendokumentation", "old_mdvmt", "Berichts")</li>
+                    </ul>
+                </div>
+            </div>
+        </div>*@
+
+    @*<div class="top navbar navbar-default navbar-collapse">
+            <div class="container">
+                <div class="navbar-header">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Abmelden", "Logoff", "Home")</li>
+                        <li>@Html.ActionLink("Startseite", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Aggregate", "old_ademsr", "Berichts")
+                            <ul class="nav navbar-nav">
+                                <li>@Html.ActionLink("Aggregatestammdaten", "old_ademsr", "Berichts")</li>
+                                <li>@Html.ActionLink("Aggregatemaschinendaten", "old_advmt", "Berichts")</li>
+                                <li>@Html.ActionLink("Zusätzliche Maschinendaten", "old_ab", "Berichts")</li>
+                            </ul>
+                        <li>@Html.ActionLink("Anlagendokumentation", "old_mdvmt", "Berichts")</li>
+                    </ul>
+                </div>
+            </div>
+        </div>*@
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">KA Cloppenburg</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Startseite", "Index", "Home")</li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Aggregate<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Aggregatestammdaten", "old_ademsr", "Berichts")</li>
+                        <li>@Html.ActionLink("Aggregatemaschinendaten", "old_advmt", "Berichts")</li>
+                        <li>@Html.ActionLink("Zusätzliche Maschinendaten", "old_ab", "Berichts")</li>
+                    </ul>
+                </li>
+                              
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Messstellen<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Messstellenstammdaten", "old_msa", "Berichts")</li>
+                            <li>@Html.ActionLink("Messstellen Zusätzliche Daten", "old_msb", "Berichts")</li>
+                            @*<li>@Html.ActionLink("Zusätzliche Maschinendaten", "old_ab", "Berichts")</li>*@
+                        </ul>
+                    </li>
+    
+
+               @* <li>@Html.ActionLink("Anlagendokumentation", "old_mdvmt", "Berichts")</li>*@
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>@Html.ActionLink("Abmelden", "Logoff", "Home")</li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--
+        </div>
+        </div>
+    -->
+
+    <div class="rest container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; 2016-@DateTime.Now.Year - Pandatasoft - </p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

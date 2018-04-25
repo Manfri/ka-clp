@@ -1,0 +1,118 @@
+﻿@model IEnumerable<AMEL2.Models.Bericht>
+
+@{
+    ViewBag.Title = "Messstellen Anzeige-Bedienung";
+}
+
+<h2>Messstellen Anzeige-Bedienung</h2>
+<!--
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+-->
+<table class="table">
+    <tr>        
+        <th>
+            AKZ 
+        </th>
+        <th>
+            Bezeichnung
+        </th>
+        <th>
+            Örtlichkeit
+        </th>
+        <th>
+            Anzeige Vor-Ort
+        </th>
+        <th>
+            Anzeige Schaltanlage
+        </th>
+        <th>
+            Anzeige Panel
+        </th>
+        <th>
+            Anzeige PLS
+        </th>
+        <th>
+            Meldung Schaltanlage
+        </th>
+        <th>
+            Meldung Panel
+        </th>
+        <th>
+            Meldung PLS            
+        </th>
+        <th>
+            Prozessanschluss 
+        </th>
+       
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>        
+        @if (item.IT == 0)
+        {
+        <td class="table-cell-aliceblue">
+            @Html.DisplayFor(modelItem => item.s1)
+        </td>
+        <td class="table-cell-aliceblue">           
+        </td>
+        <td class="table-cell-aliceblue">            
+        </td>
+        <td class="table-cell-aliceblue">            
+        </td>
+        <td class="table-cell-aliceblue"></td>
+        <td class="table-cell-aliceblue"></td>
+        <td class="table-cell-aliceblue"></td>
+        <td class="table-cell-aliceblue"></td>
+        <td class="table-cell-aliceblue"></td>
+        <td class="table-cell-aliceblue"></td>
+        <td class="table-cell-aliceblue"></td>
+        }
+        @if (item.IT != 0)
+        {
+            <td >
+                @Html.DisplayFor(modelItem => item.s1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.s2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.s3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.s4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.s5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.s6)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.s7)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.s8)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.s9)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.s10)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.s11)
+            </td>
+        }
+        <!--
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BerichtID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BerichtID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BerichtID })
+        </td>
+        -->
+    </tr>
+}
+
+</table>
