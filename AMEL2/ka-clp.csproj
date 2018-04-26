@@ -240,6 +240,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Views\Berichts\old_mdvmt2.cshtml" />
     <None Include="Properties\PublishProfiles\AMEL2.pubxml">
       <SubType>Designer</SubType>
     </None>
@@ -320,6 +321,9 @@
     <Content Include="Views\Berichts\old_msb.cshtml" />
     <Content Include="Views\Berichts\old_msa_edit.cshtml" />
     <Content Include="Views\Berichts\old_msa.cshtml" />
+    <Content Include="Views\Berichts\old_mdvmt3.cshtml" />
+    <Content Include="Views\Berichts\old_mdvmt4.cshtml" />
+    <Content Include="Views\Berichts\old_mdvmt5.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

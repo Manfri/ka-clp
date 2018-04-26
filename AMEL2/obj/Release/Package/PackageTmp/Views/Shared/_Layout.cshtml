@@ -84,22 +84,31 @@
                         <li>@Html.ActionLink("Zusätzliche Maschinendaten", "old_ab", "Berichts")</li>
                     </ul>
                 </li>
-                              
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Messstellen<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Messstellenstammdaten", "old_msa", "Berichts")</li>
-                            <li>@Html.ActionLink("Messstellen Zusätzliche Daten", "old_msb", "Berichts")</li>
-                            @*<li>@Html.ActionLink("Zusätzliche Maschinendaten", "old_ab", "Berichts")</li>*@
-                        </ul>
-                    </li>
-    
 
-                <li>@Html.ActionLink("Anlagendokumentation", "old_mdvmt", "Berichts")</li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Messstellen<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Messstellenstammdaten", "old_msa", "Berichts")</li>
+                        <li>@Html.ActionLink("Messstellen Zusätzliche Daten", "old_msb", "Berichts")</li>
+
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Dokumentation<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Anlagendokumentation 2018", "old_mdvmt", "Berichts")</li>
+                        <li>@Html.ActionLink("Verfahrensfließbilder", "old_mdvmt2", "Berichts")</li>
+                        <li>@Html.ActionLink("LV's der 6. Baumassnahme", "old_mdvmt3", "Berichts")</li>
+                        <li>@Html.ActionLink("Lagepläne", "old_mdvmt4", "Berichts")</li>
+                        <li>@Html.ActionLink("Bauzeichnungen 2017", "old_mdvmt5", "Berichts")</li>
+                    </ul>
+                </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>@Html.ActionLink("Abmelden", "Logoff", "Home")</li>
             </ul>
+
         </div>
     </nav>
 
