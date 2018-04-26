@@ -108,3 +108,5 @@ C:\AMEL WEB\ka-clp\AMEL2\obj\Release\ka-clp.csproj.CoreCompileInputs.cache
 C:\AMEL WEB\ka-clp\AMEL2\obj\Release\ka-clp.csproj.CopyComplete
 C:\AMEL WEB\ka-clp\AMEL2\obj\Release\AMEL2.dll
 C:\AMEL WEB\ka-clp\AMEL2\obj\Release\AMEL2.pdb
+C:\AMEL WEB\ka-clp\AMEL2\bin\EPPlus.dll
+C:\AMEL WEB\ka-clp\AMEL2\bin\EPPlus.xml

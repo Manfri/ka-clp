@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using AMEL2.Models;
 using System.IO;
+using System.Web.UI;
+using OfficeOpenXml;
 
 namespace AMEL2.Controllers
 {
@@ -22,35 +24,76 @@ namespace AMEL2.Controllers
         public void ExcelExport_old_ademsr(string sortOrder, string searchString)
         {
             StringWriter sw = new StringWriter();
+            HtmlTextWriter htw = new HtmlTextWriter(sw);
+            var grid = new System.Web.UI.WebControls.GridView();
+            var products = getList_admser(sortOrder, searchString);
 
-            //First line for column names
-            sw.WriteLine("\"Projekt\",\"Anlage\",\"Bereich\",\"Aggregat\",\"AKZ\",\"Bezeichnung\",\"Antriebsart\",\"Rep-Schalter\",\"Ex-Schutz\",\"Bemerkungen\",\"Änd-Index\"");
-
-            System.Collections.Generic.List<Bericht> list = getList_admser(sortOrder,  searchString);
-
-            foreach (Bericht item in list)
+            grid.DataSource = products;
+            grid.DataBind();
+            ExcelPackage excel = new ExcelPackage();
+            var workSheet = excel.Workbook.Worksheets.Add("Aggregate");
+            var totalCols = grid.Rows[0].Cells.Count;
+            var totalRows = grid.Rows.Count;
+            var headerRow = grid.HeaderRow;
+            for (var i = 1; i <= totalCols; i++)
             {
-                sw.WriteLine(string.Format("\"{0}\",\"{1}\",\"{2}\",\"{3}\",\"{4}\",\"{5}\",\"{6}\",\"{7}\",\"{8}\",\"{9}\",\"{10}\",\"{11}\"",
-                                           item.Projekt,
-                                           item.s1,
-                                           item.s2,
-                                           item.s3,
-                                           item.s4,
-                                           item.s5,
-                                           item.s6,
-                                           item.s7,
-                                           item.s8,
-                                           item.s9,
-                                           item.s10,
-                                           item.s11
-                                           ));
+                workSheet.Cells[1, i].Value = headerRow.Cells[i - 1].Text;
+            }
+            for (var j = 1; j <= totalRows; j++)
+            {
+                for (var i = 1; i <= totalCols; i++)
+                {
+                    var product = products.ElementAt(j - 1);
+                    workSheet.Cells[j + 1, i].Value = product.GetType().GetProperty(headerRow.Cells[i - 1].Text).GetValue(product, null);
+                }
+            }
+            using (var memoryStream = new MemoryStream())
+            {
+                Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                var filename1 = string.Format("KA Cloppenburg Aggregate {0}.xlsx", DateTime.Now.ToString("ddmmyyyy"));
+                Response.AddHeader("content-disposition", string.Format("attachment;  filename={0}",filename1));
+                excel.SaveAs(memoryStream);
+                memoryStream.WriteTo(Response.OutputStream);
+                Response.Flush();
+                Response.End();
             }
 
-            Response.AddHeader("Content-Disposition", "attachment; filename=Aggregatestammdaten.xlsx");
-            Response.ContentType = "application/ms-excel";
-            //Response.ContentEncoding = System.Text.Encoding.GetEncoding("unicode");
-            Response.Write(sw);
-            Response.End();
+            ////First line for column names
+            ////sw.WriteLine("\"Projekt\",\"Anlage\",\"Bereich\",\"Aggregat\",\"AKZ\",\"Bezeichnung\",\"Antriebsart\",\"Rep-Schalter\",\"Ex-Schutz\",\"Bemerkungen\",\"Änd-Index\"");
+
+            ////System.Collections.Generic.List<Bericht> list = getList_admser(sortOrder,  searchString);
+
+            ////foreach (Bericht item in list)
+            ////{
+            ////    sw.WriteLine(string.Format("\"{0}\",\"{1}\",\"{2}\",\"{3}\",\"{4}\",\"{5}\",\"{6}\",\"{7}\",\"{8}\",\"{9}\",\"{10}\",\"{11}\"",
+            ////                               item.Projekt,
+            ////                               item.s1,
+            ////                               item.s2,
+            ////                               item.s3,
+            ////                               item.s4,
+            ////                               item.s5,
+            ////                               item.s6,
+            ////                               item.s7,
+            ////                               item.s8,
+            ////                               item.s9,
+            ////                               item.s10,
+            ////                               item.s11
+            ////                               ));
+            ////}
+            //Response.ClearContent();
+            //Response.Buffer = true;
+            //Response.AddHeader("Content-Disposition", "attachment; filename=Aggregatestammdaten.xls");
+            //Response.ContentType = "application/ms-excel";
+            ////Response.ContentEncoding = System.Text.Encoding.GetEncoding("unicode");
+            ////Response.Write(sw);
+            ////Response.Output.Write(sw.ToString());
+            //var headerRow = grid.HeaderRow;
+            //headerRow.Cells[0].Text = "haha";
+            //grid.RenderControl(htw);
+            //grid.HeaderRow.BackColor = System.Drawing.Color.Aqua;
+            //Response.Write(sw.ToString());
+            //Response.End();
+
         }
 
         public List<Bericht> getList_admser(string sortOrder, string searchString)
