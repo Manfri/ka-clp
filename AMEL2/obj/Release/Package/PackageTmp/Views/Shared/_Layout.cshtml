@@ -22,53 +22,7 @@
         appInsights.trackPageView();
     </script>    
 </head>
-<body>
-    <!--
-           <div class="top navbar navbar-default navbar-collapse">
-               <div class="container">
-                                      <div class="navbar-header">
-                                          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-
-                          <span class="icon-bar"></span>
-                          <span class="icon-bar"></span>
-                          <span class="icon-bar"></span>
-                                      , new { searchString = "10".ToString() }, null
-
-       </button>
-       </div>
-    -->
-    @*<div class="top navbar navbar-default navbar-collapse">
-            <div class="container">
-                <div class="navbar-header">
-                    <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Abmelden", "Logoff", "Home")</li>
-                        <li>@Html.ActionLink("Startseite", "Index", "Home")</li>
-                        <li>@Html.ActionLink("Aggregatestammdaten", "old_ademsr", "Berichts")</li>
-                        <li>@Html.ActionLink("Aggregatemaschinendaten", "old_advmt", "Berichts")</li>
-                        <li>@Html.ActionLink("Zusätzliche Maschinendaten", "old_ab", "Berichts")</li>
-                        <li>@Html.ActionLink("Anlagendokumentation", "old_mdvmt", "Berichts")</li>
-                    </ul>
-                </div>
-            </div>
-        </div>*@
-
-    @*<div class="top navbar navbar-default navbar-collapse">
-            <div class="container">
-                <div class="navbar-header">
-                    <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Abmelden", "Logoff", "Home")</li>
-                        <li>@Html.ActionLink("Startseite", "Index", "Home")</li>
-                        <li>@Html.ActionLink("Aggregate", "old_ademsr", "Berichts")
-                            <ul class="nav navbar-nav">
-                                <li>@Html.ActionLink("Aggregatestammdaten", "old_ademsr", "Berichts")</li>
-                                <li>@Html.ActionLink("Aggregatemaschinendaten", "old_advmt", "Berichts")</li>
-                                <li>@Html.ActionLink("Zusätzliche Maschinendaten", "old_ab", "Berichts")</li>
-                            </ul>
-                        <li>@Html.ActionLink("Anlagendokumentation", "old_mdvmt", "Berichts")</li>
-                    </ul>
-                </div>
-            </div>
-        </div>*@
+<body>    
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -79,17 +33,32 @@
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Aggregate<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li>@Html.ActionLink("Aggregatestammdaten", "old_ademsr", "Berichts")</li>
+                        @if (Request.IsAuthenticated && (HttpContext.Current.User.IsInRole("canEdit") || HttpContext.Current.User.IsInRole("canNoEdit")))
+    {
+                    <li>@Html.ActionLink("Aggregatestammdaten", "old_ademsr", "Berichts")</li>
                         <li>@Html.ActionLink("Aggregatemaschinendaten", "old_advmt", "Berichts")</li>
                         <li>@Html.ActionLink("Zusätzliche Maschinendaten", "old_ab", "Berichts")</li>
+}
+else
+{
+                    <li></li>
+}                        
                     </ul>
                 </li>
 
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Messstellen<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li>@Html.ActionLink("Messstellenstammdaten", "old_msa", "Berichts")</li>
-                        <li>@Html.ActionLink("Messstellen Zusätzliche Daten", "old_msb", "Berichts")</li>
+                        @if (Request.IsAuthenticated && (HttpContext.Current.User.IsInRole("canEdit") || HttpContext.Current.User.IsInRole("canNoEdit")))
+    {
+                    <li>@Html.ActionLink("Messstellenstammdaten", "old_msa", "Berichts")</li>
+                    <li>@Html.ActionLink("Messstellen Zusätzliche Daten", "old_msb", "Berichts")</li>
+}
+else
+{
+                    <li></li>
+}
+
 
                     </ul>
                 </li>
@@ -97,11 +66,19 @@
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Dokumentation<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li>@Html.ActionLink("Anlagendokumentation 2018", "old_mdvmt", "Berichts")</li>
-                        <li>@Html.ActionLink("Verfahrensfließbilder", "old_mdvmt2", "Berichts")</li>
-                        <li>@Html.ActionLink("LV's der 6. Baumassnahme", "old_mdvmt3", "Berichts")</li>
-                        <li>@Html.ActionLink("Lagepläne", "old_mdvmt4", "Berichts")</li>
-                        <li>@Html.ActionLink("Bauzeichnungen 2017", "old_mdvmt5", "Berichts")</li>
+                        @if (Request.IsAuthenticated && (HttpContext.Current.User.IsInRole("canEdit") || HttpContext.Current.User.IsInRole("canNoEdit")))
+    {
+                    <li>@Html.ActionLink("Anlagendokumentation 2018", "old_mdvmt", "Berichts")</li>
+                    <li>@Html.ActionLink("Verfahrensfließbilder", "old_mdvmt2", "Berichts")</li>
+                    <li>@Html.ActionLink("LV's der 6. Baumassnahme", "old_mdvmt3", "Berichts")</li>
+                    <li>@Html.ActionLink("Lagepläne", "old_mdvmt4", "Berichts")</li>
+                    <li>@Html.ActionLink("Bauzeichnungen 2017", "old_mdvmt5", "Berichts")</li>
+}
+else
+{
+                    <li></li>
+}
+
                     </ul>
                 </li>
             </ul>
@@ -113,10 +90,7 @@
         </div>
     </nav>
 
-    <!--
-        </div>
-        </div>
-    -->
+    
 
     <div class="rest container body-content">
         @RenderBody()
