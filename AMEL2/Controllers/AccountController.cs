@@ -9,7 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using AMEL2.Models;
-
+using Microsoft.AspNet.Identity.EntityFramework;
 namespace AMEL2.Controllers
 {
     [Authorize]
@@ -70,16 +70,17 @@ namespace AMEL2.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View(model);
+                return View(model);                
             }
 
             // Anmeldefehler werden bezüglich einer Kontosperre nicht gezählt.
             // Wenn Sie aktivieren möchten, dass Kennwortfehler eine Sperre auslösen, ändern Sie in "shouldLockout: true".
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe , shouldLockout: false);
             switch (result)
             {
                 case SignInStatus.Success:
                     return RedirectToLocal(returnUrl);
+                    //return RedirectToAction("Index", "Home");
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -262,7 +263,23 @@ namespace AMEL2.Controllers
             AddErrors(result);
             return View();
         }
-
+        [AllowAnonymous]
+        public ActionResult  AddUserAndRole(AMEL2.Models.ApplicationDbContext context)
+        {
+            IdentityResult ir;
+            var rm = new RoleManager<IdentityRole>
+                (new RoleStore<IdentityRole>(context));
+            ir = rm.Create(new IdentityRole("canNoEdit"));
+            var um = new UserManager<ApplicationUser>(
+                new UserStore<ApplicationUser>(context));
+            var user = new ApplicationUser()
+            {
+                UserName = "user2@amel.de",
+            };
+            ir = um.Create(user, "$Amel123");            
+            ir = um.AddToRole(user.Id, "canNoEdit");
+            return View();
+        }
         //
         // GET: /Account/ResetPasswordConfirmation
         [AllowAnonymous]

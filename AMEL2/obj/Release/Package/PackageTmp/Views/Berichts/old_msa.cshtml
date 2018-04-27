@@ -16,6 +16,7 @@
         Stichwortsuche: @Html.TextBox("SearchString")
         <input type="submit" value="Suchen" />
         <input type="button" value="Alle anzeigen" onclick="location.href='@Url.Action("old_msa", "Berichts",new {sortOrder = String.Empty, searchString = "All"},null)';return false;" />
+        <input type="button" value="Excel Export" onclick="location.href='@Url.Action("ExcelExport_old_msa", "Berichts",new {sortOrder = String.Empty, searchString = "All"},null)';return false;" />
     </p>
 }
 

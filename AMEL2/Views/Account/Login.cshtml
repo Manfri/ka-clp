@@ -17,7 +17,7 @@
                 <div class="form-group">
                     @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
                     <div class="col-md-10">
-                        @Html.TextBoxFor(m => m.Email,  new { placeholder = "Email", @class = "form-control"})
+                        @Html.TextBoxFor(m => m.Email, new { placeholder = "Email", @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -45,23 +45,29 @@
         </section>
     </div>
 </div>
+@*User Rolle and User Add*@
 
+
+@*@using (Html.BeginForm())
+{
+<p>
+    <input type="button" value="Excel Export" onclick="location.href='@Url.Action("AddUserAndRole", "Account",null)';return false;"  />
+</p>
+}*@
 
 @*
-    @Html.ActionLink("Als neuer Benutzer registrieren", "Register")
+    @Html.ActionLink(" Als neuer Benutzer registrieren", "Register" )
+       Diese Option aktivieren, nachdem Sie die Kontobestätigung für die Funktion zum Zurücksetzen des Kennworts aktiviert haben
+<p>
+    @Html.ActionLink("Kennwort vergessen?", "ForgotPassword")
+</p>
 
 
-     Diese Option aktivieren, nachdem Sie die Kontobestätigung für die Funktion zum Zurücksetzen des Kennworts aktiviert haben
-        <p>
-            @Html.ActionLink("Kennwort vergessen?", "ForgotPassword")
-        </p>
-
-
-    <div class="col-md-4">
-        <section id="socialLoginForm">
-            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-        </section>
-    </div>
+<div class="col-md-4">
+    <section id="socialLoginForm">
+        @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+    </section>
+</div>
 
 *@
 @section Scripts {

@@ -16,8 +16,9 @@ namespace AMEL2.Controllers
                 return HttpContext.GetOwinContext().Authentication;
             }
         }
-
+        [AllowAnonymous]
         [Authorize(Roles = "canEdit")]
+        [Authorize(Roles = "canNoEdit")]
         public ActionResult Index()
         {
             return View();

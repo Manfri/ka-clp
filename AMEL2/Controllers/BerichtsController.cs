@@ -27,17 +27,24 @@ namespace AMEL2.Controllers
             HtmlTextWriter htw = new HtmlTextWriter(sw);
             var grid = new System.Web.UI.WebControls.GridView();
             var products = getList_admser(sortOrder, searchString);
-
+            var colu = new myExcelColumns();
             grid.DataSource = products;
             grid.DataBind();
             ExcelPackage excel = new ExcelPackage();
             var workSheet = excel.Workbook.Worksheets.Add("Aggregate");
             var totalCols = grid.Rows[0].Cells.Count;
             var totalRows = grid.Rows.Count;
-            var headerRow = grid.HeaderRow;
+            var headerRow = grid.HeaderRow;           
             for (var i = 1; i <= totalCols; i++)
             {
-                workSheet.Cells[1, i].Value = headerRow.Cells[i - 1].Text;
+                if (i <= AggregateCol.Length)
+                {
+                    workSheet.Cells[1, i].Value = AggregateCol[i - 1];
+                }
+                else
+                {
+                    workSheet.Cells[1, i].Value = "";
+                }                
             }
             for (var j = 1; j <= totalRows; j++)
             {
@@ -47,53 +54,62 @@ namespace AMEL2.Controllers
                     workSheet.Cells[j + 1, i].Value = product.GetType().GetProperty(headerRow.Cells[i - 1].Text).GetValue(product, null);
                 }
             }
+            
             using (var memoryStream = new MemoryStream())
             {
                 Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
-                var filename1 = string.Format("KA Cloppenburg Aggregate {0}.xlsx", DateTime.Now.ToString("ddmmyyyy"));
+                var filename1 = string.Format("KA Cloppenburg Aggregate {0}.xlsx", DateTime.UtcNow.ToString("dd.MM.yyyy"));
                 Response.AddHeader("content-disposition", string.Format("attachment;  filename={0}",filename1));
                 excel.SaveAs(memoryStream);
                 memoryStream.WriteTo(Response.OutputStream);
                 Response.Flush();
                 Response.End();
             }
+        }
+        public void ExcelExport_old_msa(string sortOrder, string searchString)
+        {
+            StringWriter sw = new StringWriter();
+            HtmlTextWriter htw = new HtmlTextWriter(sw);
+            var grid = new System.Web.UI.WebControls.GridView();
+            var products = getList_msa(sortOrder, searchString);
+            var colu = new myExcelColumns();
+            grid.DataSource = products;
+            grid.DataBind();
+            ExcelPackage excel = new ExcelPackage();
+            var workSheet = excel.Workbook.Worksheets.Add("Messstellen");
+            var totalCols = grid.Rows[0].Cells.Count;
+            var totalRows = grid.Rows.Count;
+            var headerRow = grid.HeaderRow;
+            for (var i = 1; i <= totalCols; i++)
+            {
+                if (i <= MessCol.Length)
+                {
+                    workSheet.Cells[1, i].Value = MessCol[i - 1];
+                }
+                else
+                {
+                    workSheet.Cells[1, i].Value = "";
+                }
+            }
+            for (var j = 1; j <= totalRows; j++)
+            {
+                for (var i = 1; i <= totalCols; i++)
+                {
+                    var product = products.ElementAt(j - 1);
+                    workSheet.Cells[j + 1, i].Value = product.GetType().GetProperty(headerRow.Cells[i - 1].Text).GetValue(product, null);
+                }
+            }
 
-            ////First line for column names
-            ////sw.WriteLine("\"Projekt\",\"Anlage\",\"Bereich\",\"Aggregat\",\"AKZ\",\"Bezeichnung\",\"Antriebsart\",\"Rep-Schalter\",\"Ex-Schutz\",\"Bemerkungen\",\"Änd-Index\"");
-
-            ////System.Collections.Generic.List<Bericht> list = getList_admser(sortOrder,  searchString);
-
-            ////foreach (Bericht item in list)
-            ////{
-            ////    sw.WriteLine(string.Format("\"{0}\",\"{1}\",\"{2}\",\"{3}\",\"{4}\",\"{5}\",\"{6}\",\"{7}\",\"{8}\",\"{9}\",\"{10}\",\"{11}\"",
-            ////                               item.Projekt,
-            ////                               item.s1,
-            ////                               item.s2,
-            ////                               item.s3,
-            ////                               item.s4,
-            ////                               item.s5,
-            ////                               item.s6,
-            ////                               item.s7,
-            ////                               item.s8,
-            ////                               item.s9,
-            ////                               item.s10,
-            ////                               item.s11
-            ////                               ));
-            ////}
-            //Response.ClearContent();
-            //Response.Buffer = true;
-            //Response.AddHeader("Content-Disposition", "attachment; filename=Aggregatestammdaten.xls");
-            //Response.ContentType = "application/ms-excel";
-            ////Response.ContentEncoding = System.Text.Encoding.GetEncoding("unicode");
-            ////Response.Write(sw);
-            ////Response.Output.Write(sw.ToString());
-            //var headerRow = grid.HeaderRow;
-            //headerRow.Cells[0].Text = "haha";
-            //grid.RenderControl(htw);
-            //grid.HeaderRow.BackColor = System.Drawing.Color.Aqua;
-            //Response.Write(sw.ToString());
-            //Response.End();
-
+            using (var memoryStream = new MemoryStream())
+            {
+                Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                var filename1 = string.Format("KA Cloppenburg Messstellen {0}.xlsx", DateTime.UtcNow.ToString("dd.MM.yyyy"));
+                Response.AddHeader("content-disposition", string.Format("attachment;  filename={0}", filename1));
+                excel.SaveAs(memoryStream);
+                memoryStream.WriteTo(Response.OutputStream);
+                Response.Flush();
+                Response.End();
+            }
         }
 
         public List<Bericht> getList_admser(string sortOrder, string searchString)
@@ -130,7 +146,41 @@ namespace AMEL2.Controllers
             }
             return bers.ToList();
         }
-       
+        public List<Bericht> getList_msa(string sortOrder, string searchString)
+        {
+            ViewBag.s1SortParm = String.IsNullOrEmpty(sortOrder) ? "s1_desc" : "";
+            var bers = from s in db.Berichts select s;
+            bers = bers.Where(p => p.BN == 2 && p.Projekt == 140902);
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                if (searchString.Equals("All"))
+                {
+                    _searchString = String.Empty;
+                    searchString = String.Empty;
+                }
+            }
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                _searchString = searchString;
+                bers = bers.Where(p => p.s1.Contains(searchString));
+            }
+            else
+            {
+                if (!String.IsNullOrEmpty(_searchString))
+                {
+                    bers = bers.Where(p => p.s1.Contains(_searchString));
+                }
+            }
+
+            switch (sortOrder)
+            {
+                case "s1_desc":
+                    bers = bers.OrderByDescending(s => s.s1);
+                    break;
+            }
+            return bers.ToList();
+        }
+
 
         public ActionResult Index()
         {
@@ -821,5 +871,84 @@ namespace AMEL2.Controllers
             }
             base.Dispose(disposing);
         }
+        public string[] AggregateCol = {
+            "IDS",
+            "Projekt",
+            "TypA",
+            "IT",
+            "Index 1",
+"Index 2",
+"Index 3",
+"AKZ",
+"ID",
+"Bezeichnung",
+"Antriebsart",
+"Montageort",
+"REP",
+"Ex",
+"Bemerkungen",
+"Änd-Index",
+"Hersteller Endausbau",
+"Fabrikat Endausbau",
+"Typ Endausbau",
+"Nennspannung Endausbau",
+"Nennleistung Endausbau",
+"Nennstrom Endausbau",
+"Nenndrehzahl Endausbau",
+"CosPhi Endausbau",
+"Kaltleiter Endausbau",
+"Dichtigkeit Endausbau",
+"Temperatur Endausbau",
+"Überdruck Endausbau",
+"Trockenlauf Endausbau",
+"1 Bezeichnung",
+"1 Endausbau",
+"2 Bezeichnung",
+"2 Endausbau",
+"3 Bezeichnung",
+"3 Endausbau",
+"4 Bezeichnung",
+"4 Endausbau",
+"5 Bezeichnung",
+"5 Endausbau"
+};
+        public string[] MessCol = {
+            "IDS",
+            "Projekt",
+            "TypA",
+            "IT",
+            "Index 1",
+"Index 1",
+"Index 2",
+"Index 3",
+"AKZ",
+"ID",
+"Bezeichnung",
+"Fkt-PLT",
+"Ex",
+"Örtlichkeit",
+"Montageort",
+"MB-min",
+"MB-max",
+"EH",
+"VersorgungsSp.",
+"SigAus1",
+"ProzessA.",
+"Bemerkungen",
+"Änd-Index",
+"Hersteller Endausbau",
+"Fabrikat Endausbau",
+"Typ Endausbau",
+"1 Bezeichnung",
+"1 Endausbau",
+"2 Bezeichnung",
+"2 Endausbau",
+"3 Bezeichnung",
+"3 Endausbau",
+"4 Bezeichnung",
+"4 Endausbau",
+"5 Bezeichnung",
+"5 Endausbau"
+};
     }
 }
