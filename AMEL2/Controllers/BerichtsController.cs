@@ -352,7 +352,10 @@ namespace AMEL2.Controllers
         {
             return View();
         }
-
+        public ActionResult old_mdvmt6(string sortOrder, string searchString)
+        {
+            return View();
+        }
 
         public ActionResult old_msb(string sortOrder, string searchString)
         {
