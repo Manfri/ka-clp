@@ -21,7 +21,7 @@ namespace AMEL2.Controllers
         [Authorize(Roles = "canNoEdit")]
         public ActionResult Index()
         {
-            return View();
+                        return View();
         }
 
         public ActionResult About()

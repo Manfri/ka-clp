@@ -1,28 +1,28 @@
-﻿<!DOCTYPE html>
+﻿@using AMEL2.Controllers
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Pandatasoft - </title>
-   
-    @Styles.Render("~/Content/css")    
+
+    @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    
-    <script type = 'text/javascript' >
-        var appInsights=window.appInsights||function(config)
-        {
-            function r(config){ t[config] = function(){ var i = arguments; t.queue.push(function(){ t[config].apply(t, i)})} }
-            var t = { config:config},u=document,e=window,o='script',s=u.createElement(o),i,f;for(s.src=config.url||'//az416426.vo.msecnd.net/scripts/a/ai.0.js',u.getElementsByTagName(o)[0].parentNode.appendChild(s),t.cookie=u.cookie,t.queue=[],i=['Event','Exception','Metric','PageView','Trace','Ajax'];i.length;)r('track'+i.pop());return r('setAuthenticatedUserContext'),r('clearAuthenticatedUserContext'),config.disableExceptionTracking||(i='onerror',r('_'+i),f=e[i],e[i]=function(config, r, u, e, o) { var s = f && f(config, r, u, e, o); return s !== !0 && t['_' + i](config, r, u, e, o),s}),t
+
+    <script type='text/javascript'>
+        var appInsights = window.appInsights || function (config) {
+            function r(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } }
+            var t = { config: config }, u = document, e = window, o = 'script', s = u.createElement(o), i, f; for (s.src = config.url || '//az416426.vo.msecnd.net/scripts/a/ai.0.js', u.getElementsByTagName(o)[0].parentNode.appendChild(s), t.cookie = u.cookie, t.queue = [], i = ['Event', 'Exception', 'Metric', 'PageView', 'Trace', 'Ajax']; i.length;)r('track' + i.pop()); return r('setAuthenticatedUserContext'), r('clearAuthenticatedUserContext'), config.disableExceptionTracking || (i = 'onerror', r('_' + i), f = e[i], e[i] = function (config, r, u, e, o) { var s = f && f(config, r, u, e, o); return s !== !0 && t['_' + i](config, r, u, e, o), s }), t
         }({
-            instrumentationKey:'ebd5eae7-882b-4ca7-a828-8169fcb95073'
+            instrumentationKey: 'ebd5eae7-882b-4ca7-a828-8169fcb95073'
         });
-        
-        window.appInsights=appInsights;
+
+        window.appInsights = appInsights;
         appInsights.trackPageView();
-    </script>    
+    </script>
 </head>
-<body>    
+<body>
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -34,15 +34,15 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Aggregate<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         @if (Request.IsAuthenticated && (HttpContext.Current.User.IsInRole("canEdit") || HttpContext.Current.User.IsInRole("canNoEdit")))
-    {
-                    <li>@Html.ActionLink("Aggregatestammdaten", "old_ademsr", "Berichts")</li>
-                        <li>@Html.ActionLink("Aggregatemaschinendaten", "old_advmt", "Berichts")</li>
-                        <li>@Html.ActionLink("Zusätzliche Maschinendaten", "old_ab", "Berichts")</li>
-}
-else
-{
-                    <li></li>
-}                        
+                        {
+                            <li>@Html.ActionLink("Aggregatestammdaten", "old_ademsr", "Berichts")</li>
+                            <li>@Html.ActionLink("Aggregatemaschinendaten", "old_advmt", "Berichts")</li>
+                            <li>@Html.ActionLink("Zusätzliche Maschinendaten", "old_ab", "Berichts")</li>
+                        }
+                        else
+                        {
+                            <li></li>
+                        }
                     </ul>
                 </li>
 
@@ -50,14 +50,14 @@ else
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Messstellen<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         @if (Request.IsAuthenticated && (HttpContext.Current.User.IsInRole("canEdit") || HttpContext.Current.User.IsInRole("canNoEdit")))
-    {
-                    <li>@Html.ActionLink("Messstellenstammdaten", "old_msa", "Berichts")</li>
-                    <li>@Html.ActionLink("Messstellen Zusätzliche Daten", "old_msb", "Berichts")</li>
-}
-else
-{
-                    <li></li>
-}
+                        {
+                            <li>@Html.ActionLink("Messstellenstammdaten", "old_msa", "Berichts")</li>
+                            <li>@Html.ActionLink("Messstellen Zusätzliche Daten", "old_msb", "Berichts")</li>
+                        }
+                        else
+                        {
+                            <li></li>
+                        }
 
 
                     </ul>
@@ -67,23 +67,24 @@ else
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Dokumentation<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         @if (Request.IsAuthenticated && (HttpContext.Current.User.IsInRole("canEdit") || HttpContext.Current.User.IsInRole("canNoEdit")))
-    {
-                    <li>@Html.ActionLink("Anlagendokumentation 2018", "old_mdvmt", "Berichts")</li>
-                    <li>@Html.ActionLink("Verfahrensfließbilder", "old_mdvmt2", "Berichts")</li>
-                    <li>@Html.ActionLink("LV's der 6. Baumassnahme", "old_mdvmt3", "Berichts")</li>
-                    <li>@Html.ActionLink("Lagepläne", "old_mdvmt4", "Berichts")</li>
-                    <li>@Html.ActionLink("Bauzeichnungen 2017", "old_mdvmt5", "Berichts")</li>
-                    <li>@Html.ActionLink("Steuerungsbeschreibungen", "old_mdvmt6", "Berichts")</li>
-}
-else
-{
-                    <li></li>
-}
+                        {
+                            <li>@Html.ActionLink("Anlagendokumentation 2018", "old_mdvmt", "Berichts")</li>
+                            <li>@Html.ActionLink("Verfahrensfließbilder", "old_mdvmt2", "Berichts")</li>
+                            <li>@Html.ActionLink("LV's der 6. Baumassnahme", "old_mdvmt3", "Berichts")</li>
+                            <li>@Html.ActionLink("Lagepläne", "old_mdvmt4", "Berichts")</li>
+                            <li>@Html.ActionLink("Bauzeichnungen 2017", "old_mdvmt5", "Berichts")</li>
+                            <li>@Html.ActionLink("Steuerungsbeschreibungen", "old_mdvmt6", "Berichts")</li>
+                        }
+                        else
+                        {
+                            <li></li>
+                        }
 
                     </ul>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                <li><a class="navbar-brand" href="#">@GlobalVariables.Email</a></li>
                 <li>@Html.ActionLink("Anmelden", "Login", "Account")</li>
                 <li>@Html.ActionLink("Abmelden", "Logoff", "Home")</li>
             </ul>
@@ -91,7 +92,7 @@ else
         </div>
     </nav>
 
-    
+
 
     <div class="rest container body-content">
         @RenderBody()
