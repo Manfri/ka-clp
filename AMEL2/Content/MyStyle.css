@@ -5,7 +5,12 @@
     box-shadow: none;
     max-height: 500px;
 }
-
+.navbar-brand-small {
+    float: left;
+    padding: 15px 15px;
+    font-size: 14px;
+    line-height: 20px;
+}
     .navbar-collapse.collapse {
         display: block;
         height: 500px;

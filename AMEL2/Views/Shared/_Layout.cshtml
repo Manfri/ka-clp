@@ -84,9 +84,15 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a class="navbar-brand" href="#">@GlobalVariables.Email</a></li>
-                <li>@Html.ActionLink("Anmelden", "Login", "Account")</li>
-                <li>@Html.ActionLink("Abmelden", "Logoff", "Home")</li>
+                <li><a class="navbar-brand-small" href="#">@GlobalVariables.Email</a></li>
+                @if (string.IsNullOrEmpty(GlobalVariables.Email))
+                {
+                    <li>@Html.ActionLink("Anmelden", "Login", "Account")</li>
+                }
+                else
+                {
+                    <li>@Html.ActionLink("Abmelden", "Logoff", "Home")</li>
+                }
             </ul>
 
         </div>
