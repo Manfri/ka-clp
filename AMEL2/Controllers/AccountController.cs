@@ -72,7 +72,7 @@ namespace AMEL2.Controllers
             {
                 return View(model);                
             }
-            GlobalVariables.Email = model.Email;
+            
             // Anmeldefehler werden bezüglich einer Kontosperre nicht gezählt.
             // Wenn Sie aktivieren möchten, dass Kennwortfehler eine Sperre auslösen, ändern Sie in "shouldLockout: true".
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe , shouldLockout: false);

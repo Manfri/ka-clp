@@ -39,7 +39,7 @@ namespace AMEL2.Controllers
         }
         public ActionResult LogOff()
         {
-            GlobalVariables.Email = null;
+            
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);            
             return RedirectToAction("Index", "Home");
 
