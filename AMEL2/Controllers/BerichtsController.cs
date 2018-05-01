@@ -220,6 +220,7 @@ namespace AMEL2.Controllers
                     bers = bers.OrderByDescending(s => s.s4);
                     break;
             }
+            ViewBag.old_ademsr = bers.Count();
             return View(bers.ToList());
         }
 
@@ -256,6 +257,7 @@ namespace AMEL2.Controllers
                     bers = bers.OrderByDescending(s => s.s4);
                     break;
             }
+            ViewBag.old_advmt = bers.Count();
             return View(bers.ToList());
         }
 
@@ -292,6 +294,7 @@ namespace AMEL2.Controllers
                     bers = bers.OrderByDescending(s => s.s4);
                     break;
             }
+            ViewBag.old_ab = bers.Count();
             return View(bers.ToList());
         }
 
@@ -389,6 +392,7 @@ namespace AMEL2.Controllers
                     bers = bers.OrderByDescending(s => s.s4);
                     break;
             }
+            ViewBag.old_msb = bers.Count();
             return View(bers.ToList());
         }
 
@@ -424,6 +428,7 @@ namespace AMEL2.Controllers
                     bers = bers.OrderByDescending(s => s.s4);
                     break;
             }
+            ViewBag.old_msa = bers.Count();
             return View(bers.ToList());
         }
 
