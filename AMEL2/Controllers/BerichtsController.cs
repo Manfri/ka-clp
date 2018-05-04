@@ -360,6 +360,37 @@ namespace AMEL2.Controllers
             return View();
         }
 
+
+
+        public ActionResult old_kaclpBestandDoku1(string sortOrder, string searchString)
+        {
+            return View();
+        }
+        public ActionResult old_kaclpBestandDoku2(string sortOrder, string searchString)
+        {
+            return View();
+        }
+        public ActionResult old_kaclpBestandDoku3(string sortOrder, string searchString)
+        {
+            return View();
+        }
+        public ActionResult old_kaclpBestandDoku4(string sortOrder, string searchString)
+        {
+            return View();
+        }
+        public ActionResult old_kaclpBestandDoku5(string sortOrder, string searchString)
+        {
+            return View();
+        }
+        public ActionResult old_kaclpBestandDoku6(string sortOrder, string searchString)
+        {
+            return View();
+        }
+
+
+
+
+
         public ActionResult old_msb(string sortOrder, string searchString)
         {
             ViewBag.s1SortParm = String.IsNullOrEmpty(sortOrder) ? "s1_desc" : "";

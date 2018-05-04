@@ -327,6 +327,12 @@
     <Content Include="Views\Berichts\old_mdvmt4.cshtml" />
     <Content Include="Views\Berichts\old_mdvmt5.cshtml" />
     <Content Include="Views\Berichts\old_mdvmt6.cshtml" />
+    <Content Include="Views\Berichts\old_kaclpBestandDoku1.cshtml" />
+    <Content Include="Views\Berichts\old_kaclpBestandDoku2.cshtml" />
+    <Content Include="Views\Berichts\old_kaclpBestandDoku3.cshtml" />
+    <Content Include="Views\Berichts\old_kaclpBestandDoku4.cshtml" />
+    <Content Include="Views\Berichts\old_kaclpBestandDoku5.cshtml" />
+    <Content Include="Views\Berichts\old_kaclpBestandDoku6.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
