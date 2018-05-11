@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PandatasoftModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BerichtsUpdateTrack">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Projekt" Type="int" />
+          <Property Name="BN" Type="int" />
+          <Property Name="IT" Type="int" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="Date" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="tblAntriebsart">
+          <Key>
+            <PropertyRef Name="IDAA" />
+          </Key>
+          <Property Name="IDAA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Antriebsart" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="PandatasoftModelStoreContainer">
+          <EntitySet Name="BerichtsUpdateTrack" EntityType="Self.BerichtsUpdateTrack" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblAntriebsart" EntityType="Self.tblAntriebsart" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PandatasoftModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BerichtsUpdateTrack">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Projekt" Type="Int32" />
+          <Property Name="BN" Type="Int32" />
+          <Property Name="IT" Type="Int32" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="tblAntriebsart">
+          <Key>
+            <PropertyRef Name="IDAA" />
+          </Key>
+          <Property Name="IDAA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Antriebsart" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="PandatasoftEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BerichtsUpdateTrack" EntityType="Self.BerichtsUpdateTrack" />
+          <EntitySet Name="tblAntriebsart" EntityType="Self.tblAntriebsart" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PandatasoftModelStoreContainer" CdmEntityContainer="PandatasoftEntities">
+          <EntitySetMapping Name="BerichtsUpdateTrack">
+            <EntityTypeMapping TypeName="PandatasoftModel.BerichtsUpdateTrack">
+              <MappingFragment StoreEntitySet="BerichtsUpdateTrack">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Projekt" ColumnName="Projekt" />
+                <ScalarProperty Name="BN" ColumnName="BN" />
+                <ScalarProperty Name="IT" ColumnName="IT" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblAntriebsart">
+            <EntityTypeMapping TypeName="PandatasoftModel.tblAntriebsart">
+              <MappingFragment StoreEntitySet="tblAntriebsart">
+                <ScalarProperty Name="IDAA" ColumnName="IDAA" />
+                <ScalarProperty Name="Antriebsart" ColumnName="Antriebsart" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Kein" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

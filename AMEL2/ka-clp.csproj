@@ -95,6 +95,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -203,11 +204,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Antriebsart.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Antriebsart.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Antriebsart.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Antriebsart.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Antriebsart.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Antriebsart.edmx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="BerichtsUpdateTrack.cs">
+      <DependentUpon>Antriebsart.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BerichtsController.cs" />
     <Compile Include="Controllers\GlobalVariables.cs" />
@@ -228,8 +247,21 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="tblAntriebsart.cs">
+      <DependentUpon>Antriebsart.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Antriebsart.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Antriebsart.edmx</DependentUpon>
+      <LastGenOutput>Antriebsart.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Antriebsart.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Antriebsart.edmx</DependentUpon>
+      <LastGenOutput>Antriebsart.cs</LastGenOutput>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\Images\PDF_icon_32.png" />
     <Content Include="Content\MyStyle.css" />
@@ -243,6 +275,13 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Views\Berichts\old_mdvmt2.cshtml" />
+    <EntityDeploy Include="Antriebsart.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Antriebsart.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Antriebsart.edmx.diagram">
+      <DependentUpon>Antriebsart.edmx</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\AMEL2.pubxml">
       <SubType>Designer</SubType>
     </None>
@@ -352,6 +391,9 @@
     <EmbeddedResource Include="Migrations\201611231218037_Initial.resx">
       <DependentUpon>201611231218037_Initial.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

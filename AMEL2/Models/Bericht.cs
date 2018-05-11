@@ -85,7 +85,7 @@ namespace AMEL2.Models
         }
         public List<SelectListItem> getListAntriebsart()
         {
-            List<SelectListItem> listYesNo = new List<SelectListItem>();
+            List<SelectListItem> listAntriebsart = new List<SelectListItem>();
             var data = new[]{
                  new SelectListItem{ Value="Leistungsabgang",Text="Leistungsabgang"},
                  new SelectListItem{ Value="Direktantrieb",Text="Direktantrieb"},
@@ -99,8 +99,8 @@ namespace AMEL2.Models
                  new SelectListItem{ Value="Magnetventil elektrisch",Text="Magnetventil elektrisch"},
                  new SelectListItem{ Value="Magnetventil Pneumatikantrieb",Text="Magnetventil Pneumatikantrieb"},
              };
-            listYesNo = data.ToList();
-            return listYesNo;
+            listAntriebsart = data.ToList();
+            return listAntriebsart;
         }
     }
     

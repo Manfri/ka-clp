@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PandatasoftModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BerichtsUpdateTrack">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Projekt" Type="Int32" />
+    <Property Name="BN" Type="Int32" />
+    <Property Name="IT" Type="Int32" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="tblAntriebsart">
+    <Key>
+      <PropertyRef Name="IDAA" />
+    </Key>
+    <Property Name="IDAA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Antriebsart" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="PandatasoftEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BerichtsUpdateTrack" EntityType="Self.BerichtsUpdateTrack" />
+    <EntitySet Name="tblAntriebsart" EntityType="Self.tblAntriebsart" />
+  </EntityContainer>
+</Schema>

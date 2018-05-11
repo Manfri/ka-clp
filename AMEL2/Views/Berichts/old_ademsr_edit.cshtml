@@ -3,7 +3,8 @@
 @{
     ViewBag.Title = "Aggregatestammdaten bearbeiten";
     List<SelectListItem> listYesNo = Model.getListYesNo();
-    List<SelectListItem> listAntriebsart = Model.getListAntriebsart();
+    // List<SelectListItem> listAntriebsart = Model.getListAntriebsart();
+    List<SelectListItem> listAntriebsart = new AMEL2.Controllers.BerichtsController().getListAntriebsart();
 }
 
 <h2>Aggregatestammdaten bearbeiten</h2>

@@ -3,4 +3,7 @@
   <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Die in der Datei &amp;quot;web.config&amp;quot; festgelegte Verbindungszeichenfolge, die von der Anwendung für den Zugriff auf die Datenbank verwendet wird." defaultValue="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-AMEL2-20161123125733.mdf;Initial Catalog=aspnet-AMEL2-20161123125733;Integrated Security=True" tags="SqlConnectionString">
     <parameterEntry kind="XmlFile" scope="C:\\AMEL\ WEB\\ka-clp\\AMEL2\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
   </parameter>
+  <parameter name="PandatasoftEntities-Web.config Connection String" description="PandatasoftEntities Die in der Datei &amp;quot;web.config&amp;quot; festgelegte Verbindungszeichenfolge, die von der Anwendung für den Zugriff auf die Datenbank verwendet wird." defaultValue="metadata=res://*/Antriebsart.csdl|res://*/Antriebsart.ssdl|res://*/Antriebsart.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=amling.database.windows.net;initial catalog=Pandatasoft;persist security info=True;user id=mkvf;password=$$vfmk16;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\AMEL\ WEB\\ka-clp\\AMEL2\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='PandatasoftEntities']/@connectionString" />
+  </parameter>
 </parameters>

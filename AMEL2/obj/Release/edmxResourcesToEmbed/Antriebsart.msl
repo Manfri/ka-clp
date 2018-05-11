@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PandatasoftModelStoreContainer" CdmEntityContainer="PandatasoftEntities">
+    <EntitySetMapping Name="BerichtsUpdateTrack">
+      <EntityTypeMapping TypeName="PandatasoftModel.BerichtsUpdateTrack">
+        <MappingFragment StoreEntitySet="BerichtsUpdateTrack">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Projekt" ColumnName="Projekt" />
+          <ScalarProperty Name="BN" ColumnName="BN" />
+          <ScalarProperty Name="IT" ColumnName="IT" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAntriebsart">
+      <EntityTypeMapping TypeName="PandatasoftModel.tblAntriebsart">
+        <MappingFragment StoreEntitySet="tblAntriebsart">
+          <ScalarProperty Name="IDAA" ColumnName="IDAA" />
+          <ScalarProperty Name="Antriebsart" ColumnName="Antriebsart" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

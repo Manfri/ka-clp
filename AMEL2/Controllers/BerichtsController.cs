@@ -16,8 +16,16 @@ namespace AMEL2.Controllers
     public class BerichtsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        private PandatasoftEntities db1 = new PandatasoftEntities();
 
-        
+
+        public List<SelectListItem> getListAntriebsart()
+        {
+            List<tblAntriebsart> listAntriebsart = db1.tblAntriebsart.ToList();
+            var lst = listAntriebsart.Select(x => new SelectListItem { Value = x.Antriebsart.ToString(), Text = x.Antriebsart.ToString() }).ToList();
+            return lst;
+        }
+
         // GET: Berichts        
         static string _searchString;
         
@@ -692,11 +700,17 @@ namespace AMEL2.Controllers
             {
                 db.Entry(bericht).State = EntityState.Modified;
                 db.SaveChanges();
+                berUpdateTrack(bericht);
                 return RedirectToAction("old_ademsr");
             }
             return View(bericht);
         }
-
+        private void berUpdateTrack(Bericht bericht)
+        {
+            BerichtsUpdateTrack but = new BerichtsUpdateTrack() { Projekt = bericht.Projekt, BN = bericht.BN, IT = bericht.IT, Email = User.Identity.Name, Date = DateTime.Now };
+            db1.BerichtsUpdateTrack.Add(but);
+            db1.SaveChanges();
+        }
         [Authorize(Roles = "canEdit")]
         public ActionResult old_advmt_edit(int? id)
         {
