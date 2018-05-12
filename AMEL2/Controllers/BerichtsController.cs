@@ -66,7 +66,7 @@ namespace AMEL2.Controllers
             using (var memoryStream = new MemoryStream())
             {
                 Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
-                var filename1 = string.Format("KA Cloppenburg Aggregate {0}.xlsx", DateTime.UtcNow.ToString("dd.MM.yyyy"));
+                var filename1 = string.Format("{0} Aggregate {1}.xlsx",GlobalVariables.Projektname, DateTime.UtcNow.ToString("dd.MM.yyyy"));
                 Response.AddHeader("content-disposition", string.Format("attachment;  filename={0}",filename1));
                 excel.SaveAs(memoryStream);
                 memoryStream.WriteTo(Response.OutputStream);
@@ -111,7 +111,7 @@ namespace AMEL2.Controllers
             using (var memoryStream = new MemoryStream())
             {
                 Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
-                var filename1 = string.Format("KA Cloppenburg Messstellen {0}.xlsx", DateTime.UtcNow.ToString("dd.MM.yyyy"));
+                var filename1 = string.Format("{0} Messstellen {1}.xlsx",GlobalVariables.Projektname, DateTime.UtcNow.ToString("dd.MM.yyyy"));
                 Response.AddHeader("content-disposition", string.Format("attachment;  filename={0}", filename1));
                 excel.SaveAs(memoryStream);
                 memoryStream.WriteTo(Response.OutputStream);
@@ -124,7 +124,7 @@ namespace AMEL2.Controllers
         {
             ViewBag.s1SortParm = String.IsNullOrEmpty(sortOrder) ? "s1_desc" : "";
             var bers = from s in db.Berichts select s;
-            bers = bers.Where(p => p.BN == 1 && p.Projekt == 140902);
+            bers = bers.Where(p => p.BN == 1 && p.Projekt == GlobalVariables.Projekt);
             if (!String.IsNullOrEmpty(searchString))
             {
                 if (searchString.Equals("All"))
@@ -158,7 +158,7 @@ namespace AMEL2.Controllers
         {
             ViewBag.s1SortParm = String.IsNullOrEmpty(sortOrder) ? "s1_desc" : "";
             var bers = from s in db.Berichts select s;
-            bers = bers.Where(p => p.BN == 2 && p.Projekt == 140902);
+            bers = bers.Where(p => p.BN == 2 && p.Projekt == GlobalVariables.Projekt);
             if (!String.IsNullOrEmpty(searchString))
             {
                 if (searchString.Equals("All"))
@@ -200,7 +200,7 @@ namespace AMEL2.Controllers
         {
             ViewBag.s1SortParm = String.IsNullOrEmpty(sortOrder) ? "s1_desc" : "";
             var bers = from s in db.Berichts select s;
-            bers = bers.Where(p => p.BN == 1 && p.Projekt== 140902);
+            bers = bers.Where(p => p.BN == 1 && p.Projekt== GlobalVariables.Projekt);
             if (!String.IsNullOrEmpty(searchString))
             {
                 if (searchString.Equals("All"))
@@ -237,7 +237,7 @@ namespace AMEL2.Controllers
         {
             ViewBag.s1SortParm = String.IsNullOrEmpty(sortOrder) ? "s1_desc" : "";
             var bers = from s in db.Berichts select s;
-            bers = bers.Where(p => p.BN == 1 && p.Projekt == 140902);
+            bers = bers.Where(p => p.BN == 1 && p.Projekt == GlobalVariables.Projekt);
             if (!String.IsNullOrEmpty(searchString))
             {
                 if (searchString.Equals("All"))
@@ -274,7 +274,7 @@ namespace AMEL2.Controllers
         {
             ViewBag.s1SortParm = String.IsNullOrEmpty(sortOrder) ? "s1_desc" : "";
             var bers = from s in db.Berichts select s;
-            bers = bers.Where(p => p.BN == 1 && p.Projekt == 140902);
+            bers = bers.Where(p => p.BN == 1 && p.Projekt == GlobalVariables.Projekt);
             if (!String.IsNullOrEmpty(searchString))
             {
                 if (searchString.Equals("All"))
@@ -403,7 +403,7 @@ namespace AMEL2.Controllers
         {
             ViewBag.s1SortParm = String.IsNullOrEmpty(sortOrder) ? "s1_desc" : "";
             var bers = from s in db.Berichts select s;
-            bers = bers.Where(p => p.BN == 2 && p.Projekt == 140902);
+            bers = bers.Where(p => p.BN == 2 && p.Projekt == GlobalVariables.Projekt);
             if (!String.IsNullOrEmpty(searchString))
             {
                 if (searchString.Equals("All"))
@@ -439,7 +439,7 @@ namespace AMEL2.Controllers
         {
             ViewBag.s1SortParm = String.IsNullOrEmpty(sortOrder) ? "s1_desc" : "";
             var bers = from s in db.Berichts select s;
-            bers = bers.Where(p => p.BN == 2 && p.Projekt == 140902);
+            bers = bers.Where(p => p.BN == 2 && p.Projekt == GlobalVariables.Projekt);
             if (!String.IsNullOrEmpty(searchString))
             {
                 if (searchString.Equals("All"))
@@ -471,111 +471,7 @@ namespace AMEL2.Controllers
             return View(bers.ToList());
         }
 
-        //public ActionResult old_msa(string sortOrder, string searchString)
-        //{
-        //    ViewBag.s1SortParm = String.IsNullOrEmpty(sortOrder) ? "s1_desc" : "";
-        //    var bers = from s in db.Berichts select s;
-        //    bers = bers.Where(p => p.BN == 2 && p.Projekt == 17);
-        //    if (!String.IsNullOrEmpty(searchString))
-        //    {
-        //        if (searchString.Equals("All"))
-        //        {
-        //            _searchString = String.Empty;
-        //            searchString = String.Empty;
-        //        }
-        //    }
-        //    if (!String.IsNullOrEmpty(searchString))
-        //    {
-        //        _searchString = searchString;
-        //        bers = bers.Where(p => p.s1.Contains(searchString));
-        //    }
-        //    else
-        //    {
-        //        if (!String.IsNullOrEmpty(_searchString))
-        //        {
-        //            bers = bers.Where(p => p.s1.Contains(_searchString));
-        //        }
-        //    }
-
-        //    switch (sortOrder)
-        //    {
-        //        case "s1_desc":
-        //            bers = bers.OrderByDescending(s => s.s1);
-        //            break;
-        //    }
-        //    return View(bers.ToList());
-        //}
-
-
-        public ActionResult aab(string sortOrder, string searchString)       {
-            ViewBag.s1SortParm = String.IsNullOrEmpty(sortOrder) ? "s1_desc" : "";            
-            var bers = from s in db.Berichts  select s;
-            bers = bers.Where(p => p.BN == 24);
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                if (searchString.Equals("All"))
-                {
-                    _searchString = String.Empty;
-                    searchString = String.Empty;
-                }
-            }
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                _searchString = searchString;
-                bers = bers.Where(p => p.s1.Contains(searchString));
-            }
-            else
-            {
-                if (!String.IsNullOrEmpty(_searchString))
-                {                    
-                    bers = bers.Where(p => p.s1.Contains(_searchString));
-                }
-            }
-            
-            switch (sortOrder)
-            {
-                case "s1_desc":
-                    bers = bers.OrderByDescending(s => s.s1);
-                    break;
-            }
-            return View(bers.ToList());
-        }        
-        public ActionResult asa()
-        {
-            return View(db.Berichts.Where(p => p.BN == 23).ToList());
-        }
-        public ActionResult agd()
-        {
-            return View(db.Berichts.Where(p => p.BN == 22).ToList());
-        }
-        public ActionResult al()
-        {
-            return View(db.Berichts.Where(p => p.BN == 20).ToList());
-        }
-        public ActionResult msab()
-        {
-            return View(db.Berichts.Where(p => p.BN == 19).ToList());
-        }
-        public ActionResult msgd()
-        {
-            return View(db.Berichts.Where(p => p.BN == 17).ToList());
-        }
-        public ActionResult mbr()
-        {
-            return View(db.Berichts.Where(p => p.BN == 16).ToList());
-        }
-        public ActionResult msl()
-        {
-            return View(db.Berichts.Where(p => p.BN == 15).ToList());
-        }
-        public ActionResult kme()
-        {
-            return View(db.Berichts.Where(p=>p.BN == 2).ToList());
-        }
-        public ActionResult zvoss()
-        {
-            return View(db.Berichts.Where(p => p.BN == 13).ToList());
-        }
+        
         // GET: Berichts/Details/5
         public ActionResult Details(int? id)
         {
@@ -734,6 +630,7 @@ namespace AMEL2.Controllers
             {
                 db.Entry(bericht).State = EntityState.Modified;
                 db.SaveChanges();
+                berUpdateTrack(bericht);
                 return RedirectToAction("old_advmt");
             }
             return View(bericht);
@@ -764,6 +661,7 @@ namespace AMEL2.Controllers
             {
                 db.Entry(bericht).State = EntityState.Modified;
                 db.SaveChanges();
+                berUpdateTrack(bericht);
                 return RedirectToAction("old_ab");
             }
             return View(bericht);
@@ -794,6 +692,7 @@ namespace AMEL2.Controllers
             {
                 db.Entry(bericht).State = EntityState.Modified;
                 db.SaveChanges();
+                berUpdateTrack(bericht);
                 return RedirectToAction("old_mdemsr");
             }
             return View(bericht);
@@ -823,6 +722,7 @@ namespace AMEL2.Controllers
             {
                 db.Entry(bericht).State = EntityState.Modified;
                 db.SaveChanges();
+                berUpdateTrack(bericht);
                 return RedirectToAction("old_mdvmt");
             }
             return View(bericht);
@@ -852,6 +752,7 @@ namespace AMEL2.Controllers
             {
                 db.Entry(bericht).State = EntityState.Modified;
                 db.SaveChanges();
+                berUpdateTrack(bericht);
                 return RedirectToAction("old_msb");
             }
             return View(bericht);
@@ -882,6 +783,7 @@ namespace AMEL2.Controllers
             {
                 db.Entry(bericht).State = EntityState.Modified;
                 db.SaveChanges();
+                berUpdateTrack(bericht);
                 return RedirectToAction("old_msa");
             }
             return View(bericht);
@@ -913,6 +815,7 @@ namespace AMEL2.Controllers
             Bericht bericht = db.Berichts.Find(id);
             db.Berichts.Remove(bericht);
             db.SaveChanges();
+            berUpdateTrack(bericht);
             return RedirectToAction("Index");
         }
 

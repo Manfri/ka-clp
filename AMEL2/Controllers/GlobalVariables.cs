@@ -26,5 +26,21 @@ namespace AMEL2.Controllers
                 HttpContext.Current.Application["Email"] = value;
             }
         }
+        public static int Projekt
+        {
+            get
+            {
+                return 140902;
+            }
+            
+        }
+        public static string Projektname
+        {
+            get
+            {
+                return "KA Cloppenburg";
+            }
+
+        }
     }
 }
